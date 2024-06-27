@@ -26,6 +26,7 @@ const DashboardContent = ({title}: PropTypes) => {
     const haandleDeleteBlog = async (blogId: string) => {
         let confirmation = confirm("Are you sure you want to delete the Blog?");
         if (confirmation) {
+            setLoading(true);
             try {
                 const response = await axios.delete(`/api/v1/blogs/delete/${blogId}`);
 
@@ -35,6 +36,8 @@ const DashboardContent = ({title}: PropTypes) => {
                 }
             } catch (error) {
                 console.log(error);
+            } finally{
+                setLoading(false);
             }
         }
     }
