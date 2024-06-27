@@ -3,7 +3,6 @@ import BlogCard from "../components/BlogCard";
 import { useEffect, useState } from "react";
 import MainLoader from "../components/MainLoader";
 import { BlogDataType } from "../types/types";
-import { useSelector } from "react-redux";
 import Pagination from "../components/Pagination";
 import axios from "axios";
 
