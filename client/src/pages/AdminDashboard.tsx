@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
-import { BlogDataType, UserInfoType } from "../types/types";
+import { UserInfoType } from "../types/types";
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+// import axios from "axios";
 import DashboardContent from "../components/DashboardContent";
 
-import { MdDelete } from "react-icons/md";
-import { BiSolidShow } from "react-icons/bi";
-import { changeDateFormat } from "../utils/dateFormat";
+// import { MdDelete } from "react-icons/md";
+// import { BiSolidShow } from "react-icons/bi";
+// import { changeDateFormat } from "../utils/dateFormat";
 
 
 const AdminDashboard = () => {
@@ -16,9 +16,9 @@ const AdminDashboard = () => {
 
     const navigate = useNavigate();
 
-    // const authStatus = useSelector((state: any) => state.auth.status);
+    const authStatus = useSelector((state: any) => state.auth.status);
     const userData: UserInfoType | null = useSelector((state: any) => state.auth.userData?.data?.user);
-    const blogsData: BlogDataType[] = useSelector((state: any) => state.blogs?.blogData);
+    // const blogsData: BlogDataType[] = useSelector((state: any) => state.blogs?.blogData);
 
     let navListItems = [
         {
@@ -36,33 +36,32 @@ const AdminDashboard = () => {
     ];
 
     // Delete Blog
-    const haandleDeleteBlog = async (blogId: string) => {
-        let confirmation = confirm("Are you sure you want to delete the Blog?");
-        if (confirmation) {
-            try {
-                const response = await axios.delete(`/api/v1/blogs/delete/${blogId}`);
+    // const haandleDeleteBlog = async (blogId: string) => {
+    //     let confirmation = confirm("Are you sure you want to delete the Blog?");
+    //     if (confirmation) {
+    //         try {
+    //             const response = await axios.delete(`/api/v1/blogs/delete/${blogId}`);
 
-                if (response?.data?.statusCode === 200) {
-                    alert(response?.data?.message);
-                    navigate("/my-profile");
-                }
-            } catch (error) {
-                console.log(error);
-            }
+    //             if (response?.data?.statusCode === 200) {
+    //                 alert(response?.data?.message);
+    //                 navigate("/my-profile");
+    //             }
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    // }
+
+    useEffect(() => {
+        if (!authStatus) {
+            navigate("/sign-in");
         }
-    }
+        if (authStatus && !userData?.isAdmin) {
+            navigate("/my-profile");
+        }
+    }), [authStatus, userData];
 
-    // useEffect(() => {
-    //     if (!authStatus) {
-    //         navigate("/sign-in");
-    //     }
-    //     if (authStatus && !userData?.isAdmin) {
-    //         navigate("/my-profile");
-    //     }
-    // }), [authStatus, userData];
-
-    // authStatus && userData?.isAdmin &&
-    return (
+    return authStatus && userData?.isAdmin && (
         <div className="flex">
             {/* Side bar */}
             <section
