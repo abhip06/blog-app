@@ -3,7 +3,6 @@ import BlogCard from "../components/BlogCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BlogDataType } from "../types/types";
-import Spinner from "../components/Spinner";
 import { useSelector } from "react-redux";
 import MainLoader from "../components/MainLoader";
 
