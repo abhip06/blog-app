@@ -1,4 +1,3 @@
-import { AxiosResponse } from "axios";
 
 export type UserInfoType = {
     _id?: string;
@@ -30,14 +29,3 @@ export type BlogDataType = {
     createdAt?: string;
     updatedAt?: string;
 }
-
-interface DataResponseType {
-    statusCode?: number;
-    data?: UserInfoType;
-    message?: string;
-    success?: boolean;
-}
-
-// interface AxiosDataResponseType extends AxiosResponse<any, any> {
-//     data?: DataResponseType;
-// }
