@@ -1,12 +1,10 @@
-// import axios from "axios";
+import axios from "../Api";
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { logout } from "../features/authSlice";
 import DropdownMenu from "./DropdownMenu";
 import { UserInfoType } from "../types/types";
 import SearchInput from "./SearchInput";
-import axios from "axios";
 import { logout } from "../features/authSlice";
 
 // React icons

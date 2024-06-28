@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { useForm } from "react-hook-form";
 import { BlogDataType } from "../types/types";
 import Spinner from "../components/Spinner";
-import axios from "axios";
+import axios from "../Api";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
