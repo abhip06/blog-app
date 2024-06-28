@@ -45,13 +45,11 @@ const DropdownMenu = ({ isOpen, setOpen }: PropType) => {
             const response: any = await axios.post(
                 "/api/v1/users/logout",
                 {
-                    headers: { "Content-Type": "application/json" },
                     withCredentials: true,
                 }
             );
 
             if (response.data?.success === true) {
-                // console.log(response.data)
                 dispatch(logout())
                 setOpen(false);
                 navigate("/sign-in")
