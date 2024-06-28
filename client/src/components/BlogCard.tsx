@@ -1,5 +1,3 @@
-// import heroImg from "../assets/heroImg.jpg";
-// import { BlogDataType } from "../types/types";
 import { changeDateFormat } from "../utils/dateFormat";
 
 const BlogCard = ({ title, blogImg, date }: any) => {
