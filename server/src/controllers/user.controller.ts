@@ -102,7 +102,7 @@ const login = asyncHandler(async (req: Request, res: Response, next: NextFunctio
 
     const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(user._id);
 
-    const loggedInUser = await User.findById(user._id).select("-password");
+    const loggedInUser = await User.findById(user._id).select("-password -refreshToken");
 
     return res
         .status(200)
