@@ -70,10 +70,8 @@ const BlogPage = () => {
                 formData.append("content", updatedContent!);
                 // formData.append("category", data.category!);
 
-                console.log(formData);
                 const response = await axios.patch(
                     `/api/v1/blogs/update-blog/${blogId}`,
-                    // JSON.stringify(formData),
                     formData,
                     {
                         headers: { "Content-Type": "application/json" },
@@ -114,7 +112,6 @@ const BlogPage = () => {
 
     useEffect(() => {
         fetchBlogInfo();
-        // console.log(blogData)
     }, [])
 
     return !loading ? (
