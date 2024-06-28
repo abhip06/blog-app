@@ -86,28 +86,19 @@ export const updateBlog = asyncHandler(async (req: UserAuthInfoRequest, res: Res
     const { title, content, category } = req.body;
     const blogId = req.params?.blogId;
 
-    console.log(title, " ", content, " ", category);
-    console.log(blogId)
-
     if (!title || !content || !category) return next(new ApiError(400, "Please provide all fields."));
 
+    let blogImage;
     const blogImageLocalPath = req.file?.path;
-    if (!blogImageLocalPath) return next(new ApiError(400, "Please provide Blog Image."));
-
-    const blogImage = await uploadOnCloudinary(blogImageLocalPath);
-    if (!blogImage) return next(new ApiError(403, "Error while uploading blog image on cloudinary."));
-
+    // if (!blogImageLocalPath) return next(new ApiError(400, "Please provide Blog Image."));
+    if(blogImageLocalPath){
+        blogImage = await uploadOnCloudinary(blogImageLocalPath);
+        if (!blogImage) return next(new ApiError(403, "Error while uploading blog image on cloudinary."));
+    }
 
     const blog: BlogInfoType | null = await Blog.findById(blogId);
 
     if (String(req.user?._id) !== String(blog?.publisher?._id)) return next(new ApiError(401, "You Don't have permission to access these resources."));
-
-    // reqBlog!.title = title;
-    // reqBlog!.content = content;
-    // reqBlog!.blogImage = blogImage?.url;
-    // reqBlog!.category = category;
-
-    // await reqBlog.save();
 
     const updateBlog: BlogInfoType | null = await Blog.findByIdAndUpdate(
         blogId,
@@ -115,7 +106,7 @@ export const updateBlog = asyncHandler(async (req: UserAuthInfoRequest, res: Res
             $set: {
                 title,
                 content,
-                blogImage: blogImage?.url,
+                blogImage: blogImage?.url || blog?.blogImage,
                 category
             }
         },
