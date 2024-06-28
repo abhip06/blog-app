@@ -1,4 +1,10 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { clearData, addData } from "./features/blogSlice"
+import { login, logout } from "./features/authSlice"
+
+import axios from "./Api";
 
 import Home from "./pages/Home"
 import AllBlogs from "./pages/AllBlogs"
@@ -6,14 +12,9 @@ import About from "./pages/About"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Layout from "./Layout"
-import { useDispatch } from "react-redux"
-import { useEffect, useState } from "react"
-import axios from "axios"
-import { login, logout } from "./features/authSlice"
 import MainLoader from "./components/MainLoader"
 import Profile from "./pages/Profile"
 import BlogPage from "./pages/BlogPage"
-import { clearData, addData } from "./features/blogSlice"
 import SearchResults from "./pages/SearchResults"
 import PublishBlog from "./pages/PublishBlog"
 import AdminDashboard from "./pages/AdminDashboard"
@@ -38,7 +39,6 @@ function App() {
       );
 
       if (response.data?.statusCode === 200) {
-        // console.log(response.data)
         dispatch(login(response.data))
       } else {
         dispatch(logout())
@@ -47,7 +47,6 @@ function App() {
     } catch (error: any) {
 
       dispatch(logout())
-      // console.log(error.response?.data?.message)
 
     } finally {
 
@@ -80,7 +79,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(import.meta.env.VITE_SERVER_ORIGIN);
     fetchUserData();
     fetchAllBlogs();
   }, [])
