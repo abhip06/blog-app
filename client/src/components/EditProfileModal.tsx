@@ -42,7 +42,7 @@ const EditProfileModal = ({setEditProfile}: EditProfileType) => {
 
     // Update User Deatils
     const updateUserProfile = async (data: FormDataType) => {
-        let isConfirmed = confirm("Are you sure you want to Modify the Blog?");
+        let isConfirmed = confirm("Are you sure you want to modify changes?");
         if (isConfirmed) {
             try {
                 clearErrors();
@@ -56,7 +56,6 @@ const EditProfileModal = ({setEditProfile}: EditProfileType) => {
                 console.log(formData);
                 const response = await axios.patch(
                     `/api/v1/users/update-profile`,
-                    // JSON.stringify(formData),
                     formData,
                     {
                         headers: { "Content-Type": "application/json" },
