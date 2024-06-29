@@ -108,7 +108,7 @@ const Profile = () => {
                         <h2 className="text-4xl text-gray-800">{userData?.fullName.toUpperCase()}</h2>
                         <span className="text-base text-gray-500">@{userData?.username}</span>
                         <span className="text-base text-gray-500">{userData?.email}</span>
-                        <span className="text-base text-gray-500">Joined on {changeDateFormat(userData!.createdAt!.toDateString())}</span>
+                        <span className="text-base text-gray-500">Joined on {changeDateFormat(userData!.createdAt!.toString())}</span>
                     </div>
                 </div>
                 <span
