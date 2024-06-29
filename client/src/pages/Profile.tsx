@@ -23,7 +23,8 @@ const Profile = () => {
 
     const navigate = useNavigate();
 
-    const userData: UserInfoType | null = useSelector((state: any) => state.auth?.userData?.data?.user);
+    const authStatus: boolean = useSelector((state: any) => state.auth.status);
+    const userData: UserInfoType | null | undefined = useSelector((state: any) => state.auth?.userData?.data?.user);
     // const blogs: BlogDataType[] = useSelector((state: any) => state.blogs?.blogData);
 
     const fetchBlogsPublishedData = async (userId: string) => {
@@ -69,15 +70,16 @@ const Profile = () => {
         setEditBlogModal(true);
     }
 
-    let convertedDate = changeDateFormat(userData!.createdAt.toString());
-
     useEffect(() => {
-        fetchBlogsPublishedData(userData?._id!);
-    }, []);
+        if(!authStatus) {
+            navigate("/sign-in");
+        }
+        if(false) fetchBlogsPublishedData(userData?._id!);
 
-    return !loading ?
+    }, [authStatus]);
+
+    return authStatus && !loading ?
         <div className="sm:px-16 px-5 py-12 flex flex-col gap-5 min-h-[700px]">
-            {/* <h1 className="sm:text-4xl text-2xl mb-10 text-center">PROFILE PAGE</h1> */}
             {
                 editProfile && <EditProfileModal setEditProfile={setEditProfile} />
             }
@@ -106,7 +108,7 @@ const Profile = () => {
                         <h2 className="text-4xl text-gray-800">{userData?.fullName.toUpperCase()}</h2>
                         <span className="text-base text-gray-500">@{userData?.username}</span>
                         <span className="text-base text-gray-500">{userData?.email}</span>
-                        <span className="text-base text-gray-500">Joined on {convertedDate}</span>
+                        <span className="text-base text-gray-500">Joined on {changeDateFormat(userData!.createdAt!.toDateString())}</span>
                     </div>
                 </div>
                 <span
