@@ -68,19 +68,17 @@ const Navbar = () => {
     ];
 
     // Logout user
-    const handleOnClick = async () => {
+    const handleLogOut = async () => {
         try {
             setLoading(true)
             const response: any = await axios.post(
                 "/api/v1/users/logout",
                 {
-                    headers: { "Content-Type": "application/json" },
                     withCredentials: true,
                 }
             );
 
             if (response.data?.success === true) {
-                // console.log(response.data)
                 setIsMenuOpen(false);
                 dispatch(logout());
                 navigate("/sign-in");
@@ -244,10 +242,10 @@ const Navbar = () => {
                                     authStatus ? (
                                         <button
                                             disabled={loading}
-                                            onClick={handleOnClick}
+                                            onClick={handleLogOut}
                                             className="flex justify-center items-center gap-3 text-sm py-3 w-full rounded-lg cursor-pointer bg-gray-800 text-white border-2 hover:bg-white hover:text-gray-800"
                                         >
-                                            Sign Out {<FiLogOut className="text-lg" />}
+                                            {<FiLogOut className="text-lg" />} Sign Out
                                         </button>
                                     ) :
                                         <div className="flex gap-2 w-full">
