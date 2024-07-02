@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { CookieOptions, NextFunction, Request, Response } from "express";
 
 import { ApiResponse } from "../utils/ApiResponse";
 import { ApiError } from "../utils/ApiError";
@@ -10,9 +10,10 @@ import { UserAuthInfoRequest, UserInfoType } from "../types/customTypes";
 import mongoose from "mongoose";
 
 // Global declarations
-const options = {
+const options: CookieOptions = {
     httpOnly: true,
-    secure: true
+    secure: true,
+    sameSite: false
 }
 
 const generateAccessAndRefreshTokens = async (userId: string) => {
