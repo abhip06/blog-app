@@ -13,7 +13,7 @@ import mongoose from "mongoose";
 const options: CookieOptions = {
     httpOnly: true,
     secure: true,
-    sameSite: false
+    sameSite: "none"
 }
 
 const generateAccessAndRefreshTokens = async (userId: string) => {
