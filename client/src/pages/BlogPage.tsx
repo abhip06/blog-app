@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import heroImg from "../assets/heroImg.jpg";
-import axios from "../Api";
+import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import MainLoader from "../components/MainLoader";
 import { BlogDataType, UserInfoType } from "../types/types";

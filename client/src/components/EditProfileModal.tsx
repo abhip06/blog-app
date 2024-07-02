@@ -4,7 +4,7 @@ import { IoMdClose } from "react-icons/io"
 import { UserInfoType } from "../types/types";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
-import axios from "../Api";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 type FormDataType = {

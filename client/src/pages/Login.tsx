@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Spinner from "../components/Spinner"
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "../Api";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "../features/authSlice";
 

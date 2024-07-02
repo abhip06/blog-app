@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 import { clearData, addData } from "./features/blogSlice"
 import { login, logout } from "./features/authSlice"
 
-import axios from "./Api";
+import axios from "axios";
 
 import Home from "./pages/Home"
 import AllBlogs from "./pages/AllBlogs"

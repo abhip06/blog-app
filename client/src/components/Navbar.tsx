@@ -1,4 +1,4 @@
-import axios from "../Api";
+import axios from "axios";
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
-import axios from "../Api";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { BlogDataType } from "../types/types";
 import { useSelector } from "react-redux";

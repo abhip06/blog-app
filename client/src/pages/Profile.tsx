@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { BlogDataType, UserInfoType } from '../types/types'
 import heroImg from "../assets/heroImg.jpg";
 import { changeDateFormat } from '../utils/dateFormat';
-import axios from '../Api';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import MainLoader from '../components/MainLoader';
 import { useNavigate } from 'react-router-dom';

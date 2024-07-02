@@ -1,4 +1,4 @@
-import axios from "../Api";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,8 +16,16 @@ const BlogsPublishedCard = ({ blogId, title, blogImage, createdAt }: PublishedBl
         let confirmation = confirm("Are you sure you want to delete the Blog?");
         if (confirmation) {
             try {
-                const response = await axios.delete(`/api/v1/blogs/delete/${blogId}`);
-    
+                const response = await axios.delete(
+                    `/api/v1/blogs/delete/${blogId}`,
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                            withCredentials: true
+                        }
+                    }
+                );
+
                 if (response?.data?.statusCode === 200) {
                     alert(response?.data?.message);
                     navigate("/my-profile");
@@ -25,7 +33,7 @@ const BlogsPublishedCard = ({ blogId, title, blogImage, createdAt }: PublishedBl
             } catch (error) {
                 console.log(error);
             }
-        } 
+        }
     }
 
     return (
