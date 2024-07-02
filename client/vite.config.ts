@@ -12,6 +12,7 @@ export default ({ mode }: any) => {
         "/api": {
           target: process.env.VITE_SERVER_ORIGIN,
           changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
         }
       }
     },
