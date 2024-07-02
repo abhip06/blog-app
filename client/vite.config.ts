@@ -5,8 +5,7 @@ import react from '@vitejs/plugin-react'
 export default ({ mode }: any) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-  const development: boolean = !process.env.MODE || process.env.MODE === 'development';
-  const SERVER_ORIGIN = development ? "http://localhost:8000" : process.env.VITE_SERVER_ORIGIN;
+  const SERVER_ORIGIN = process.env.PROD ? process.env.VITE_SERVER_ORIGIN : "http://localhost:8000";
 
   return defineConfig({
     plugins: [react()],
