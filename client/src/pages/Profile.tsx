@@ -74,7 +74,8 @@ const Profile = () => {
         if(!authStatus) {
             navigate("/sign-in");
         }
-        if(false) fetchBlogsPublishedData(userData?._id!);
+        
+        fetchBlogsPublishedData(userData?._id!);
 
     }, [authStatus]);
 
