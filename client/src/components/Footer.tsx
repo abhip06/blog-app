@@ -19,10 +19,10 @@ const Footer = () => {
                 <div className="flex flex-col justify-start sm:gap-6 gap-4 text-gray-500">
                     <h3 className="text-lg text-white">Connect with Me</h3>
                     <ul className="flex sm:gap-7 gap-5">
-                        <li className="sm:text-xl text-lg cursor-pointer"><a href="https://www.instagram.com/">{<FaInstagram />}</a></li>
+                        <li className="sm:text-xl text-lg cursor-pointer"><a href="https://www.linkedin.com/in/abhinav-patel-38480b254/">{<FaLinkedin />}</a></li>
                         <li className="sm:text-xl text-lg cursor-pointer"><a href="https://www.x.com/abhip006">{<BsTwitterX />}</a></li>
                         <li className="sm:text-xl text-lg cursor-pointer"><a href="https://www.github.com/abhip06">{<FaGithub />}</a></li>
-                        <li className="sm:text-xl text-lg cursor-pointer"><a href="https://www.linkedin.com/">{<FaLinkedin />}</a></li>
+                        <li className="sm:text-xl text-lg cursor-pointer"><a href="https://www.instagram.com/">{<FaInstagram />}</a></li>
                     </ul>
                 </div>
 
