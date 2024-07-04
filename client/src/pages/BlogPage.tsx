@@ -115,7 +115,7 @@ const BlogPage = () => {
     }, [])
 
     return !loading ? (
-        <div className="flex flex-wrap flex-col justify-center items-start md:px-80 sm:px-32 px-7 sm:py-14 py-7 gap-5">
+        <div className="flex flex-wrap flex-col justify-center items-start md:px-80 sm:px-32 px-4 sm:py-14 py-7 gap-5">
             {
                 editBlogModal && <EditBlogModal blogId={blogId!} editBlogModal={editBlogModal} setEditBlogModal={setEditBlogModal} />
             }

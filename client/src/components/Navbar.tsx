@@ -216,7 +216,7 @@ const Navbar = () => {
                 {
                     isMenuOpen && (
                         <div className="fixed h-screen w-screen md:hidden bg-black/50 backdrop-blur-sm top-0 left-0 transition-all">
-                            <section className="text-black bg-white flex-col absolute right-0 top-0 h-screen w-64 p-8 gap-8 z-50 flex">
+                            <section className="text-black bg-white flex-col absolute right-0 top-0 h-screen w-72 p-8 gap-8 z-50 flex">
                                 <span
                                     className="mt-0 mb-8 text-3xl text-gray-800 cursor-pointer"
                                     onClick={() => setIsMenuOpen(false)}

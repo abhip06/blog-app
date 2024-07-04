@@ -51,7 +51,7 @@ const AllBlogsCategory = () => {
 
     return !loading ? (
 
-        <div className="sm:px-16 px-5 py-9 min-h-[800px] justify-center items-center">
+        <div className="sm:px-16 px-5 sm:py-9 py-5 min-h-[800px] justify-center items-center">
             <h1 className="md:text-4xl sm:text-2xl text-xl py-5 text-gray-700">Explore all Blog Posts for {capitalizeFirst(category!)}</h1>
             <div className="h-[1px] bg-gray-500"></div>
 
