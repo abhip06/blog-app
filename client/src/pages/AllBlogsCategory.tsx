@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import MainLoader from "../components/MainLoader";
 import { BlogDataType } from "../types/types";
 import Pagination from "../components/Pagination";
-import axios from "axios";
+import axios from "../Api";
 
 const AllBlogsCategory = () => {
 

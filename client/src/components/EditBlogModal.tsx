@@ -4,7 +4,7 @@ import { IoMdClose } from "react-icons/io"
 import { BlogDataType } from "../types/types";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
-import axios from "axios";
+import axios from "../Api";
 import { useNavigate } from "react-router-dom";
 import MainLoader from "./MainLoader";
 

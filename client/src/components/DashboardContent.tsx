@@ -5,7 +5,7 @@ import { BiSolidShow } from "react-icons/bi";
 
 
 import { changeDateFormat } from "../utils/dateFormat";
-import axios from "axios";
+import axios from "../Api";
 import { useSelector } from "react-redux";
 import { BlogDataType } from "../types/types";
 import { useState } from "react";

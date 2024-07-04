@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../Api";
 import { useNavigate } from "react-router-dom";
 
 

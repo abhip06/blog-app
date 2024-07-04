@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import axios from "../Api";
 
 
 import { BiShow } from "react-icons/bi";
