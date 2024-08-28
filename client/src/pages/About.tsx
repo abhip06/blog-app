@@ -21,7 +21,7 @@ const About = () => {
 
         <strong>"Step into Blog District and join the conversation!" 🚀</strong>
       </p>
-      <p className="text-gray-500 sm:text-sm text-xs leading-snug tracking-wide mt-10">
+      <p className="text-gray-500 text-sm sm:text-base leading-snug tracking-wide mt-10">
         Note: This website made for development purpose not for commercial use. If any copyright related
         content appears please ignore.
       </p>
