@@ -22,7 +22,7 @@ const Pagination = ({ totalPosts, postsPerPage, setCurrentPage, currentPage }: P
                 {
                     paginationNumbers?.map((page, index) => (
                         <button
-                            className={`${page === currentPage ? "bg-green-500 text-white" : ""} sm:px-4 px-3 sm:py-3 py-2 border-2 border-green-500 bg-green-50 sm:text-xl text-base text-green-600 rounded-lg hover:bg-green-100`}
+                            className={`${page === currentPage ? "bg-green-500 text-white" : ""} sm:px-4 px-3 sm:py-3 py-2 border-2 border-green-500 bg-green-50 sm:text-xl text-base text-green-600 rounded-lg hover:scale-105`}
                             key={index}
                             onClick={() => setCurrentPage(page)}
                         >
