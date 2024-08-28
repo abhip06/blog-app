@@ -6,7 +6,7 @@ const BlogCard = ({ title, blogImg, date }: any) => {
 
     return (
         <div
-            className="sm:h-[425px] h-[375px] flex flex-col gap-7 rounded-lg border-2 border-gray-300 justify-start cursor-pointer items-start hover:shadow-2xl">
+            className="sm:h-[425px] h-[375px] flex flex-col gap-7 rounded-lg border-2 border-gray-300 justify-start cursor-pointer items-start hover:shadow-lg hover:scale-105">
             <img
                 src={blogImg}
                 alt="Hero Image"

@@ -13,7 +13,7 @@ const TopBlogsCard = ({ title, content, blogImg, date }: TopRatedBlogsType) => {
     let convertedDate = changeDateFormat(date);
 
     return (
-        <div className="flex flex-col gap-5 rounded-lg justify-center bg-white items-start hover:shadow-xl sm:min-h-[500px] min-h-[400px]">
+        <div className="flex flex-col gap-5 rounded-lg justify-center bg-white items-start hover:shadow-lg sm:min-h-[500px] hover:scale-105 min-h-[400px]">
             <img src={blogImg} alt="Hero Image" width={300} className="w-full rounded-t-lg overflow-hidden sm:h-[300px] h-[200px]" />
             <div className="flex flex-col gap-5 sm:p-5 p-3">
                 <h3 className="sm:text-2xl text-xl font-bold">{title}</h3>
